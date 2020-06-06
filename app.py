@@ -16,8 +16,8 @@ def login():
         personal_quals = dict(title="Класс", content="Руководитель.")
 
         data = dict(
-            role="Начальник отдела по управлению персоналом"
-            category="Руководитель"
+            role="Начальник отдела по управлению персоналом",
+            category="Руководитель",
             content=[goals, tasks, edu_req, skills, mustknow, personal_quals]
             )
         response = jsonify(data)
