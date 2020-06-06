@@ -7,12 +7,9 @@ app.config.from_object(os.environ['APP_SETTINGS'])
 @app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        try:
-            req_data = request.get_json()
-            text = req_data['text'] # text input from PHP server
-            print(text) # for PHP part debug purposes
-        except:
-            pass
+        req_data = request.get_json()
+        text = req_data['text'] # text input from PHP server
+        print(text) # for PHP part debug purposes
             
         goals = dict(title="Цели", content=["обеспечение конкурентных преимуществ [org]Общества[/org] за счет создания эффективной кадровой политики, позволяющей формировать команду высококвалифицированных специалистов, развивать и мотивировать персонал к рациональному и эффективному труду"])
         tasks = dict(title="Задачи", content=["Разработка и внедрение кадровой политики предприятия", "Подбор, адаптация, расстановка, закрепление персонала", "Повышение профессионального уровня сотрудников", "Мотивация персонала", "Обеспечение эффективного использования персонала", "Постановка и контроль системы учета движения персонала", "Обеспечение здоровых и безопасных условий труда", "Обеспечение соблюдения норм трудового законодательства"])
@@ -24,7 +21,8 @@ def login():
         data = dict(
             role="Начальник отдела по управлению персоналом",
             category="Руководитель",
-            content=[goals, tasks, edu_req, skills, mustknow, personal_quals]
+            content=[goals, tasks, edu_req, skills, mustknow, personal_quals],
+            inputText=text # for PHP part debug purposes
             )
         response = jsonify(data)
         response.status_code = 200
