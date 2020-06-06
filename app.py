@@ -10,6 +10,7 @@ def login():
         try:
             req_data = request.get_json()
             text = req_data['text'] # text input from PHP server
+            print(text) # for PHP part debug purposes
         except:
             pass
             
