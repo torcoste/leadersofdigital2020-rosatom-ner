@@ -1,9 +1,15 @@
 # leadersofdigital2020-rosatom-ner
-Name Entity Recognition module for https://leadersofdigital.ru hackathon (track by https://rosatom.ru)
+NER (Named-Entity Recognition) module for https://leadersofdigital.ru hackathon (track by https://rosatom.ru)
 
 Team: ReactiveRND
 
 Demo: https://vast-sands-79590.herokuapp.com
+
+## Underhood
+
+- Python
+- spaCy (open-source lib for NLP - Natural Language Processing)
+- Flask (web framework)
 
 ## Testing
 ### Request example
